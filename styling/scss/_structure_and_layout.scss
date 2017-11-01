@@ -1,0 +1,48 @@
+/* # Structure and Layout
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Site Containers
+--------------------------------------------- */
+
+.site-inner,
+.wrap {
+	margin: 0 auto;
+	max-width: 1280px;
+}
+
+.site-inner {
+	word-wrap: break-word;
+}
+
+.landing-page .site-inner {
+	max-width: 800px;
+}
+
+/* ## Column Classes
+--------------------------------------------- */
+
+.col {
+	display: grid;
+	grid-gap: 40px;
+	hyphens: auto;
+}
+
+.col-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.col-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.col-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.col-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.col-6 {
+	grid-template-columns: repeat(6, 1fr);
+}

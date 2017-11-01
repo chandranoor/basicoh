@@ -1,0 +1,302 @@
+/* #Front page
+=========================================*/
+.front-page{
+  .site-inner{
+    padding-top: 0;
+  }
+  .content-sidebar-wrap{
+    margin-top: -80px;
+  }
+}
+
+/* #Front page 1
+=========================================*/
+.front-page-1{
+  padding: 25rem 0;
+  max-height: 700px;
+  background: url('../../images/frontpage-1.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-y: hidden;
+  .wrap{
+    .widget-area{
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    &::after,&::before{
+      content: '';
+      position: absolute;
+      background: #ffffff;
+      width: 100%;
+      height: 150px;
+      left: 0;
+      bottom: -140px;
+      z-index: 0;
+    }
+    &::after{
+      transform:skew(0deg,3deg);
+    }
+    &::before{
+      transform:skew(0deg,-3deg);
+    }
+  }
+  .widget{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    color: #EBECED;
+    h3{
+      font-family: 'Droid Serif',serif;
+      color: #FCF1EA;
+      font-size: 1.8em;
+      font-weight: normal;
+    }
+    .textwidget{
+      font-family: 'Lato', sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 12px;
+      line-height: 2;
+      letter-spacing: 3px;
+
+      .button{
+        font-size: 13px;
+        padding: 10px 16px;
+        margin: 4px 0;
+      }
+    }
+
+  }
+
+}
+
+/* #Front page 2
+=========================================*/
+.front-page-2{
+  background: #FFFFFF;
+  padding: 60px 0 5px;
+  position: relative;
+  overflow-y: hidden;
+  .wrap{
+  }
+  .widget{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    h3{
+      font-family: 'Droid Serif',serif;
+      font-size: 28px;
+      line-height: 1.7;
+      font-weight: normal;
+      display: block;
+    }
+    h5{
+      font-size: 14px;
+      letter-spacing: 2px;
+      display: block;
+    }
+    .textwidget{
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+  }
+
+}
+
+/* #Front page 3
+=========================================*/
+.front-page-3{
+  background: #FFFFFF;
+  position: relative;
+  padding-bottom: 80px;
+  h5{
+    display: block;
+    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 4px;
+  }
+  .widget-wrap{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    a{
+      background: #3E3E3B;
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 40px 16px 60px;
+
+      .featured-thumbnail{
+        transform: scale(0.9);
+        display: block;
+        margin-bottom: 40px;
+        transition: all 0.2s ease-out;
+      }
+
+      &:hover{
+        .featured-thumbnail{
+          transform: scale(1);
+        }
+      }
+
+      .title{
+        display: block;
+        max-width: 230px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &::after{
+    z-index:0;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 70%;
+    //transform: skew(0deg,-4deg);
+    bottom: 0;
+    background-color: #f6f7f6;
+  }
+}
+
+.woocommerce .front-page-3{
+  &::after{
+    display: none;
+  }
+}
+
+/* #Front page 4
+=========================================*/
+.front-page-4{
+  background: #FFFFFF;
+  .widget{
+    text-align: center;
+    padding: 90px 0 0;
+    .widget-title{
+      font-size: 13px;
+      font-weight: normal;
+      font-family: 'Lato',sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 60px;
+
+      position: relative;
+      display: block;
+      z-index: 1;
+    }
+    .widget-wrap{
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      &::before{
+        position: absolute;
+        content: '';
+        width: 120px;
+        height: 120px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: -60px;
+
+        background: url('../../images/quotes.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: 0;
+      }
+    }
+    &.widget_gts_widget{
+      #gts-testimonials .wrap{
+        padding: 10px 0;
+      }
+
+      h5{
+        font-size: 16px;
+        font-style: italic;
+        letter-spacing: -1px;
+      }
+
+      blockquote{
+        font-size: 18px;
+        margin: 0 0 40px;
+        font-weight: lighter;
+        font-style: normal;
+      }
+      .gts-company{
+        font-size: 14px;
+      }
+    }
+    .lSSlideOuter .lSPager.lSpg>li a{
+      background-color: #F1F2F1;
+    }
+    .lSSlideOuter .lSPager.lSpg>li.active a, .lSSlideOuter .lSPager.lSpg>li:hover a {
+      background-color: #688576;
+    }
+  }
+}
+
+/* #Front page 5
+=========================================*/
+.front-page-5{
+  padding: 100px 0 130px 0;
+  background: #EDEFEE;
+
+  font-size: 16px;
+
+  .wrap{
+    max-width: 1100px;
+  }
+
+  .flexible-widgets.widget-thirds .widget{
+    width: 100%;
+
+    &.widget_media_image{
+      text-align: center;
+    }
+
+    &.widget_custom_html{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 60px;
+      .widget-title{
+        font-size: 26px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: normal;
+      }
+      span{
+        font-family: 'Droid Serif',sans-serif;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+      }
+    }
+
+    span{
+      display: block;
+      position: relative;
+      padding: 6px;
+      opacity: 0.7;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+}
+
+
+
+.entry-image-link img.alignleft{
+  width: 100%;
+}
