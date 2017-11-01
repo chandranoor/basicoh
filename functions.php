@@ -1,10 +1,10 @@
 <?php
 /**
- * Genesis Sample.
+ * Basicoh.
  *
- * This file adds functions to the Genesis Sample Theme.
+ * This file adds functions to the Basicoh Theme.
  *
- * @package Genesis Sample
+ * @package Basicoh
  * @author  NadaNora
  * @license GPL-2.0+
  * @link    http://www.studiopress.com/
@@ -16,13 +16,13 @@ include_once( get_template_directory() . '/lib/init.php' );
 // Setup Theme.
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
-add_action( 'after_setup_theme', 'genesis_sample_localization_setup' );
+add_action( 'after_setup_theme', 'basicoh_localization_setup' );
 /**
  * Set Localization (do not remove).
  * @return void
  */
-function genesis_sample_localization_setup(){
-	load_child_theme_textdomain( 'genesis-sample', get_stylesheet_directory() . '/languages' );
+function basicoh_localization_setup(){
+	load_child_theme_textdomain( 'basicoh', get_stylesheet_directory() . '/languages' );
 }
 
 // Add the helper functions.
@@ -44,37 +44,37 @@ include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.
 include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php' );
 
 // Child theme (do not remove).
-define( 'CHILD_THEME_NAME', 'Genesis Starter' );
-define( 'CHILD_THEME_URL', 'https://github.com/srikat/genesis-starter' );
-define( 'CHILD_THEME_VERSION', '2.3.0' );
+define( 'CHILD_THEME_NAME', 'Basicoh' );
+define( 'CHILD_THEME_URL', 'https://github.com/chandranoor/basicoh' );
+define( 'CHILD_THEME_VERSION', '1.0.0' );
 
-add_action( 'wp_enqueue_scripts', 'genesis_sample_enqueue_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'basicoh_enqueue_scripts_styles' );
 /**
  * Enqueue Scripts and Styles.
  * @return scripts and styles
  */
-function genesis_sample_enqueue_scripts_styles() {
+function basicoh_enqueue_scripts_styles() {
 
-	wp_enqueue_style( 'genesis-sample-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'basicoh-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'dashicons' );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script( 'genesis-sample-responsive-menu', get_stylesheet_directory_uri() . "/js/responsive-menus{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'basicoh-responsive-menu', get_stylesheet_directory_uri() . "/js/responsive-menus{$suffix}.js", array( 'jquery' ), CHILD_THEME_VERSION, true );
 	wp_localize_script(
-		'genesis-sample-responsive-menu',
+		'basicoh-responsive-menu',
 		'genesis_responsive_menu',
-		genesis_sample_responsive_menu_settings()
+		basicoh_responsive_menu_settings()
 	);
 
 }
 
 // Define our responsive menu settings.
-function genesis_sample_responsive_menu_settings() {
+function basicoh_responsive_menu_settings() {
 
 	$settings = array(
-		'mainMenu'          => __( 'Menu', 'genesis-sample' ),
+		'mainMenu'          => __( 'Menu', 'basicoh' ),
 		'menuIconClass'     => 'dashicons-before dashicons-menu',
-		'subMenu'           => __( 'Submenu', 'genesis-sample' ),
+		'subMenu'           => __( 'Submenu', 'basicoh' ),
 		'subMenuIconsClass' => 'dashicons-before dashicons-arrow-down-alt2',
 		'menuClasses'       => array(
 			'combine' => array(
@@ -119,7 +119,7 @@ add_theme_support( 'custom-logo', array(
 	'flex-height' => true,
 ) );
 
-add_filter( 'genesis_seo_title', 'genesis_sample_header_inline_logo', 10, 3 );
+add_filter( 'genesis_seo_title', 'basicoh_header_inline_logo', 10, 3 );
 /**
  * Add an image inline in the site title element for the logo.
  *
@@ -132,10 +132,10 @@ add_filter( 'genesis_seo_title', 'genesis_sample_header_inline_logo', 10, 3 );
  * @author @_JiveDig
  * @author @_srikat
  */
-function genesis_sample_header_inline_logo( $title, $inside, $wrap ) {
+function basicoh_header_inline_logo( $title, $inside, $wrap ) {
 	// If the custom logo function and custom logo exist, set the logo image element inside the wrapping tags.
-	if ( function_exists( 'has_genesis_sample_logo' ) && has_genesis_sample_logo() ) {
-		$inside = sprintf( '<span class="screen-reader-text">%s</span>%s', esc_html( get_bloginfo( 'name' ) ), get_genesis_sample_logo() );
+	if ( function_exists( 'has_basicoh_logo' ) && has_basicoh_logo() ) {
+		$inside = sprintf( '<span class="screen-reader-text">%s</span>%s', esc_html( get_bloginfo( 'name' ) ), get_basicoh_logo() );
 	} else {
 		// If no custom logo, wrap around the site name.
 		$inside	= sprintf( '<a href="%s">%s</a>', trailingslashit( home_url() ), esc_html( get_bloginfo( 'name' ) ) );
@@ -156,7 +156,7 @@ function genesis_sample_header_inline_logo( $title, $inside, $wrap ) {
 	return $title;
 }
 
-add_filter( 'genesis_attr_site-description', 'genesis_sample_add_site_description_class' );
+add_filter( 'genesis_attr_site-description', 'basicoh_add_site_description_class' );
 /**
  * Add class for screen readers to site description.
  * This will keep the site description markup but will not have any visual presence on the page
@@ -167,8 +167,8 @@ add_filter( 'genesis_attr_site-description', 'genesis_sample_add_site_descriptio
  * @author @_neilgee
  * @author @_srikat
  */
-function genesis_sample_add_site_description_class( $attributes ) {
-	if ( function_exists( 'has_genesis_sample_logo' ) && has_genesis_sample_logo() ) {
+function basicoh_add_site_description_class( $attributes ) {
+	if ( function_exists( 'has_basicoh_logo' ) && has_basicoh_logo() ) {
 		$attributes['class'] .= ' screen-reader-text';
 	}
 
@@ -189,20 +189,20 @@ add_image_size( 'featured-image', 720, 400, true );
 
 // Rename primary and secondary navigation menus.
 add_theme_support( 'genesis-menus', array(
-	'primary'   => __( 'Primary Navigation Menu', 'genesis-sample' ),
-	'secondary' => __( 'Secondary Navigation Menu', 'genesis-sample' ),
-	'footer'    => __( 'Footer Navigation Menu', 'genesis-sample' ),
+	'primary'   => __( 'Primary Navigation Menu', 'basicoh' ),
+	'secondary' => __( 'Secondary Navigation Menu', 'basicoh' ),
+	'footer'    => __( 'Footer Navigation Menu', 'basicoh' ),
 ) );
 
 // Modify size of the Gravatar in the author box.
-add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );
-function genesis_sample_author_box_gravatar( $size ) {
+add_filter( 'genesis_author_box_gravatar_size', 'basicoh_author_box_gravatar' );
+function basicoh_author_box_gravatar( $size ) {
 	return 90;
 }
 
 // Modify size of the Gravatar in the entry comments.
-add_filter( 'genesis_comment_list_args', 'genesis_sample_comments_gravatar' );
-function genesis_sample_comments_gravatar( $args ) {
+add_filter( 'genesis_comment_list_args', 'basicoh_comments_gravatar' );
+function basicoh_comments_gravatar( $args ) {
 
 	$args['avatar_size'] = 60;
 
@@ -225,7 +225,7 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'footer' 
 ) );
 
-add_filter( 'theme_page_templates', 'genesis_sample_remove_genesis_page_templates' );
+add_filter( 'theme_page_templates', 'basicoh_remove_genesis_page_templates' );
 /**
  * Remove Genesis Page Templates.
  *
@@ -235,7 +235,7 @@ add_filter( 'theme_page_templates', 'genesis_sample_remove_genesis_page_template
  * @param array $page_templates
  * @return array
  */
-function genesis_sample_remove_genesis_page_templates( $page_templates ) {
+function basicoh_remove_genesis_page_templates( $page_templates ) {
 	unset( $page_templates['page_archive.php'] );
 	unset( $page_templates['page_blog.php'] );
 	return $page_templates;
@@ -251,7 +251,7 @@ add_action( 'genesis_after_loop', 'genesis_adjacent_entry_nav' );
 // Display author box on archive pages.
 // add_filter( 'get_the_author_genesis_author_box_archive', '__return_true' );
 
-add_action( 'genesis_theme_settings_metaboxes', 'genesis_sample_remove_metaboxes' );
+add_action( 'genesis_theme_settings_metaboxes', 'basicoh_remove_metaboxes' );
 /**
  * Remove Metaboxes
  * This removes unused or unneeded metaboxes from Genesis > Theme Settings.
@@ -260,7 +260,7 @@ add_action( 'genesis_theme_settings_metaboxes', 'genesis_sample_remove_metaboxes
  * @author Bill Erickson
  * @link http://www.billerickson.net/code/remove-metaboxes-from-genesis-theme-settings/
  */
-function genesis_sample_remove_metaboxes( $_genesis_theme_settings_pagehook ) {
+function basicoh_remove_metaboxes( $_genesis_theme_settings_pagehook ) {
 	remove_meta_box( 'genesis-theme-settings-blogpage', $_genesis_theme_settings_pagehook, 'main' );
 }
 
@@ -280,14 +280,14 @@ unregister_sidebar( 'sidebar-alt' );
 add_filter( 'genesis_attr_nav-footer', 'genesis_attributes_nav' );
 
 // Display Footer Navigation Menu above footer content
-add_action( 'genesis_footer', 'genesis_sample_do_footernav', 5 );
+add_action( 'genesis_footer', 'basicoh_do_footernav', 5 );
 /**
  * Echo the "Footer Navigation" menu.
  *
  * @uses genesis_nav_menu() Display a navigation menu.
  * @uses genesis_nav_menu_supported() Checks for support of specific nav menu.
  */
-function genesis_sample_do_footernav() {
+function basicoh_do_footernav() {
 
 	// Do nothing if menu not supported.
 	if ( ! genesis_nav_menu_supported( 'footer' ) ) {
@@ -306,13 +306,13 @@ function genesis_sample_do_footernav() {
 
 }
 
-add_filter( 'genesis_footer_creds_text', 'genesis_sample_footer_creds_filter' );
+add_filter( 'genesis_footer_creds_text', 'basicoh_footer_creds_filter' );
 /**
  * Change Footer text.
  *
  * @link  https://my.studiopress.com/documentation/customization/shortcodes-reference/footer-shortcode-reference/
  */
-function genesis_sample_footer_creds_filter( $creds ) {
+function basicoh_footer_creds_filter( $creds ) {
 	$creds = '[footer_copyright before="Copyright "] [footer_childtheme_link before ="&middot; "] on [footer_genesis_link] &middot; [footer_wordpress_link] &middot; [footer_loginout]';
 
 	return $creds;

@@ -1,32 +1,32 @@
 <?php
 /**
- * Genesis Sample.
+ * Basicoh.
  *
- * This file adds the required CSS to the front end to the Genesis Sample Theme.
+ * This file adds the required CSS to the front end to the Basicoh Theme.
  *
- * @package Genesis Sample
+ * @package Basicoh
  * @author  StudioPress
  * @license GPL-2.0+
  * @link    http://www.studiopress.com/
  */
 
-add_action( 'wp_enqueue_scripts', 'genesis_sample_css' );
+add_action( 'wp_enqueue_scripts', 'basicoh_css' );
 /**
 * Checks the settings for the link color, and accent color.
 * If any of these value are set the appropriate CSS is output.
 *
 * @since 2.2.3
 */
-function genesis_sample_css() {
+function basicoh_css() {
 
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
 
-	$color_link = get_theme_mod( 'genesis_sample_link_color', genesis_sample_customizer_get_default_link_color() );
-	$color_accent = get_theme_mod( 'genesis_sample_accent_color', genesis_sample_customizer_get_default_accent_color() );
+	$color_link = get_theme_mod( 'basicoh_link_color', basicoh_customizer_get_default_link_color() );
+	$color_accent = get_theme_mod( 'basicoh_accent_color', basicoh_customizer_get_default_accent_color() );
 
 	$css = '';
 
-	$css .= ( genesis_sample_customizer_get_default_link_color() !== $color_link ) ? sprintf( '
+	$css .= ( basicoh_customizer_get_default_link_color() !== $color_link ) ? sprintf( '
 
 		a,
 		.entry-title a:focus,
@@ -45,7 +45,7 @@ function genesis_sample_css() {
 
 		', $color_link ) : '';
 
-	$css .= ( genesis_sample_customizer_get_default_accent_color() !== $color_accent ) ? sprintf( '
+	$css .= ( basicoh_customizer_get_default_accent_color() !== $color_accent ) ? sprintf( '
 
 		button:focus,
 		button:hover,
@@ -68,7 +68,7 @@ function genesis_sample_css() {
 			background-color: %s;
 			color: %s;
 		}
-		', $color_accent, genesis_sample_color_contrast( $color_accent ) ) : '';
+		', $color_accent, basicoh_color_contrast( $color_accent ) ) : '';
 
 	if ( $css ) {
 		wp_add_inline_style( $handle, $css );

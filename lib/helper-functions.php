@@ -1,10 +1,10 @@
 <?php
 /**
- * Genesis Sample.
+ * Basicoh.
  *
- * This file adds the required helper functions used in the Genesis Sample Theme.
+ * This file adds the required helper functions used in the Basicoh Theme.
  *
- * @package Genesis Sample
+ * @package Basicoh
  * @author  StudioPress
  * @license GPL-2.0+
  * @link    http://www.studiopress.com/
@@ -18,7 +18,7 @@
  *
  * @return string Hex color code for link color.
  */
-function genesis_sample_customizer_get_default_link_color() {
+function basicoh_customizer_get_default_link_color() {
 	return '#c3251d';
 }
 
@@ -30,7 +30,7 @@ function genesis_sample_customizer_get_default_link_color() {
  *
  * @return string Hex color code for accent color.
  */
-function genesis_sample_customizer_get_default_accent_color() {
+function basicoh_customizer_get_default_accent_color() {
 	return '#c3251d';
 }
 
@@ -41,7 +41,7 @@ function genesis_sample_customizer_get_default_accent_color() {
  *
  * @return string Hex color code for contrast color
  */
-function genesis_sample_color_contrast( $color ) {
+function basicoh_color_contrast( $color ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 	$red      = hexdec( substr( $hexcolor, 0, 2 ) );
@@ -61,7 +61,7 @@ function genesis_sample_color_contrast( $color ) {
  *
  * @return string Hex color code for the color brightness
  */
-function genesis_sample_color_brightness( $color, $change ) {
+function basicoh_color_brightness( $color, $change ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 

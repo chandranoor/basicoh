@@ -1,22 +1,22 @@
 <?php
 /**
- * Genesis Sample.
+ * Basicoh.
  *
- * This file adds the default theme settings to the Genesis Sample Theme.
+ * This file adds the default theme settings to the Basicoh Theme.
  *
- * @package Genesis Sample
+ * @package Basicoh
  * @author  StudioPress
  * @license GPL-2.0+
  * @link    http://www.studiopress.com/
  */
 
-add_filter( 'genesis_theme_settings_defaults', 'genesis_sample_theme_defaults' );
+add_filter( 'genesis_theme_settings_defaults', 'basicoh_theme_defaults' );
 /**
 * Updates theme settings on reset.
 *
 * @since 2.2.3
 */
-function genesis_sample_theme_defaults( $defaults ) {
+function basicoh_theme_defaults( $defaults ) {
 
 	$defaults['blog_cat_num']              = 6;
 	$defaults['content_archive']           = 'full';
@@ -29,13 +29,13 @@ function genesis_sample_theme_defaults( $defaults ) {
 
 }
 
-add_action( 'after_switch_theme', 'genesis_sample_theme_setting_defaults' );
+add_action( 'after_switch_theme', 'basicoh_theme_setting_defaults' );
 /**
 * Updates theme settings on activation.
 *
 * @since 2.2.3
 */
-function genesis_sample_theme_setting_defaults() {
+function basicoh_theme_setting_defaults() {
 
 	if ( function_exists( 'genesis_update_settings' ) ) {
 

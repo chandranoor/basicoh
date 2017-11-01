@@ -1,4 +1,4 @@
-# Genesis Sample Theme Changelog
+# Basicoh Theme Changelog
 
 ## [2.3.0] - 2017-01-30
 * Add WooCommerce support to the theme and customizer

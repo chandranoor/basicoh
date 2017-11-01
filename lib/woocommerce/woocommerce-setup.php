@@ -1,34 +1,34 @@
 <?php
 /**
- * Genesis Sample.
+ * Basicoh.
  *
- * This file adds the required WooCommerce setup functions to the Genesis Sample Theme.
+ * This file adds the required WooCommerce setup functions to the Basicoh Theme.
  *
- * @package Genesis Sample
+ * @package Basicoh
  * @author  StudioPress
  * @license GPL-2.0+
  * @link    http://www.studiopress.com/
  */
 
-add_action( 'wp_enqueue_scripts', 'genesis_sample_products_match_height', 99 );
+add_action( 'wp_enqueue_scripts', 'basicoh_products_match_height', 99 );
 /**
  * Print an inline script to the footer to keep products the same height.
  *
  * @since 2.3.0
  */
-function genesis_sample_products_match_height() {
+function basicoh_products_match_height() {
 
 	// If Woocommerce is not activated, or a product page isn't showing, exit early.
 	if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() ) {
 		return;
 	}
 
-	wp_enqueue_script( 'genesis-sample-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-	wp_add_inline_script( 'genesis-sample-match-height', "jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });" );
+	wp_enqueue_script( 'basicoh-match-height', get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_add_inline_script( 'basicoh-match-height', "jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });" );
 
 }
 
-add_filter( 'woocommerce_style_smallscreen_breakpoint', 'genesis_sample_woocommerce_breakpoint' );
+add_filter( 'woocommerce_style_smallscreen_breakpoint', 'basicoh_woocommerce_breakpoint' );
 /**
  * Modify the WooCommerce breakpoints.
  *
@@ -36,7 +36,7 @@ add_filter( 'woocommerce_style_smallscreen_breakpoint', 'genesis_sample_woocomme
  *
  * @return string Pixel width of the theme's breakpoint.
  */
-function genesis_sample_woocommerce_breakpoint() {
+function basicoh_woocommerce_breakpoint() {
 
 	$current = genesis_site_layout();
 	$layouts = array(
@@ -63,7 +63,7 @@ function genesis_sample_woocommerce_breakpoint() {
 
 }
 
-add_filter( 'genesiswooc_products_per_page', 'genesis_sample_default_products_per_page' );
+add_filter( 'genesiswooc_products_per_page', 'basicoh_default_products_per_page' );
 /**
  * Set the default products per page.
  *
@@ -71,11 +71,11 @@ add_filter( 'genesiswooc_products_per_page', 'genesis_sample_default_products_pe
  *
  * @return int Number of products to show per page.
  */
-function genesis_sample_default_products_per_page() {
+function basicoh_default_products_per_page() {
 	return 8;
 }
 
-add_filter( 'woocommerce_pagination_args', 	'genesis_sample_woocommerce_pagination' );
+add_filter( 'woocommerce_pagination_args', 	'basicoh_woocommerce_pagination' );
 /**
  * Update the next and previous arrows to the default Genesis style.
  *
@@ -83,22 +83,22 @@ add_filter( 'woocommerce_pagination_args', 	'genesis_sample_woocommerce_paginati
  *
  * @return string New next and previous text string.
  */
-function genesis_sample_woocommerce_pagination( $args ) {
+function basicoh_woocommerce_pagination( $args ) {
 
-	$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-sample' ) );
-	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-sample' ) );
+	$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'basicoh' ) );
+	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'basicoh' ) );
 
 	return $args;
 
 }
 
-add_action( 'after_switch_theme', 'genesis_sample_woocommerce_image_dimensions_after_theme_setup', 1 );
+add_action( 'after_switch_theme', 'basicoh_woocommerce_image_dimensions_after_theme_setup', 1 );
 /**
 * Define WooCommerce image sizes on theme activation.
 *
 * @since 2.3.0
 */
-function genesis_sample_woocommerce_image_dimensions_after_theme_setup() {
+function basicoh_woocommerce_image_dimensions_after_theme_setup() {
 
 	global $pagenow;
 
@@ -106,24 +106,24 @@ function genesis_sample_woocommerce_image_dimensions_after_theme_setup() {
 		return;
 	}
 
-	genesis_sample_update_woocommerce_image_dimensions();
+	basicoh_update_woocommerce_image_dimensions();
 
 }
 
-add_action( 'activated_plugin', 'genesis_sample_woocommerce_image_dimensions_after_woo_activation', 10, 2 );
+add_action( 'activated_plugin', 'basicoh_woocommerce_image_dimensions_after_woo_activation', 10, 2 );
 /**
  * Define the WooCommerce image sizes on WooCommerce activation.
  *
  * @since 2.3.0
  */
-function genesis_sample_woocommerce_image_dimensions_after_woo_activation( $plugin ) {
+function basicoh_woocommerce_image_dimensions_after_woo_activation( $plugin ) {
 
 	// Check to see if WooCommerce is being activated.
 	if ( $plugin !== 'woocommerce/woocommerce.php' ) {
 		return;
 	}
 
-	genesis_sample_update_woocommerce_image_dimensions();
+	basicoh_update_woocommerce_image_dimensions();
 
 }
 
@@ -132,7 +132,7 @@ function genesis_sample_woocommerce_image_dimensions_after_woo_activation( $plug
  *
  * @since 2.3.0
  */
-function genesis_sample_update_woocommerce_image_dimensions() {
+function basicoh_update_woocommerce_image_dimensions() {
 
 	$catalog = array(
 		'width'  => '500', // px
